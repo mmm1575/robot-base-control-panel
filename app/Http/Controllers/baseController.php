@@ -6,26 +6,32 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\base;
 
-class enginesController extends Controller
+class baseController extends Controller
 {
-    public function save(Request $request){
-        return view($request);
-        DB::table('base')->update(array('directions' => 0));
-        
-        engine::where('engineNumber', 6)
-            ->update(['value'=> $request->engine6
-        ]);
+    public function start(){
+        return view('index');
+    }
+    public function forward(Request $request){
+        DB::table('base')->update(array('directions' => 'f'));
         return redirect()->route('/');
     }
-    public function turn_on(){
-        $engine= engine::first();
-        if($engine->on ==1){
-            DB::table('engines')->update(array('on' => 0));
-            return redirect()->route('/');
-        }
-        else{
-            DB::table('engines')->update(array('on' => 1));
-            return redirect()->route('/');
-        }
+    public function left(Request $request){
+        DB::table('base')->update(array('directions' => 'l'));
+        return redirect()->route('/');
     }
+    public function stop(Request $request){
+        DB::table('base')->update(array('directions' => 's'));
+        return redirect()->route('/');
+    }
+    public function right(Request $request){
+        DB::table('base')->update(array('directions' => 'r'));
+        return redirect()->route('/');
+    }
+    public function backward(Request $request){
+        DB::table('base')->update(array('directions' => 'b'));
+        return redirect()->route('/');
+    }
+    
+    
+    
 }
