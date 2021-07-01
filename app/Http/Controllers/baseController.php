@@ -31,6 +31,11 @@ class baseController extends Controller
         DB::table('base')->update(array('directions' => 'b'));
         return redirect()->route('/');
     }
+
+    public function retrieve(){
+        $base= DB::table('base')->first();
+        return view('retrieve', compact('base'));
+    }
     
     
     

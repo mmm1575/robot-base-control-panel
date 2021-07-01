@@ -20,3 +20,5 @@ Route::post('/l', [baseController::class, 'left'])->name('left');
 Route::post('/s', [baseController::class, 'stop'])->name('stop');
 Route::post('/r', [baseController::class, 'right'])->name('right');
 Route::post('/b', [baseController::class, 'backward'])->name('backward');
+
+Route::get('/retrieve', [baseController::class, 'retrieve'])->name('/retrieve');
