@@ -6,7 +6,7 @@ this code is for controlling robot base
 
 it is controlling the direction of the base and save the value in a database
 
-the page to retrieve the databse information just add "/retrieve" the URL
+the page to retrieve the databse information just add "/retrieve" to the URL
 
 it is developed using laravel 8 
 
